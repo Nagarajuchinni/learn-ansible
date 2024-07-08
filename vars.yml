@@ -29,7 +29,7 @@
 - name: Register variable example
   hosts: localhost
   tasks:
-    - name: get uptime of server
+  - name: get uptime of server
     ansible.builtin.shell module: uptime
     register: OUT
   - name: print OUT var

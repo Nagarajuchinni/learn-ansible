@@ -7,5 +7,4 @@
       ansible.bultine.debug:
       msg: "{{ URL }}"
 
-  # value stats with a variable, like msg: {{ URL }} then qoutes are needed, if it does not start with variable like msg:
-  Hello {{ URL}}, then quotes are not needed.
+  # value stats with a variable, like msg: {{ URL }} then qoutes are needed, if it does not start with variable like msg: Hello {{ URL}}, then quotes are not needed.

@@ -26,12 +26,12 @@
       vars:
         URL2: sample.com
 
-- name: Register variable example
+- name: Register Variable Example
   hosts: localhost
   tasks:
-  - name: get uptime of server
-    ansible.builtin.shell module: uptime
-    register: OUT
-  - name: print OUT var
-    ansible.builin.debug:
-      msg: "{{ OUT }}"
+    - name: get Uptime of server
+      ansible.builtin.shell: uptime
+      register: OUT
+    - name: Print OUT var
+      ansible.builtin.debug:
+        msg: "{{ OUT }}"

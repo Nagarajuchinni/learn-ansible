@@ -1,10 +1,10 @@
-- name: Demo on variables
+- name: Demo on Variables
   hosts: localhost
   vars:
     URL: sample.com
   tasks:
-    - name: print URL variable
-      ansible.bultine.debug:
-      msg: "{{ URL }}"
+    - name: Print URL variable
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
 
-  # value stats with a variable, like msg: {{ URL }} then qoutes are needed, if it does not start with variable like msg: Hello {{ URL}}, then quotes are not needed.
+# Value stats with a variable, like msg: {{ URL }} then quotes are needed, if it does not start with variable like msg: Hello {{ URL }}, then quotes are not needed.

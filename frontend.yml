@@ -17,8 +17,8 @@
       ansible.builtin.file:
         path: /usr/share/nginx/html
         state: directory
-        
-     - name: download and extract expence files
+
+     - name: download and extract frontend content
        ansible.builtin.unarchive:
         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
         dest: /usr/share/nginx/html

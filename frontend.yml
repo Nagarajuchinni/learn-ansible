@@ -3,8 +3,8 @@
   tasks:
     - name: installing nginx
       ansible.builtin.dnf:
-      name: nginx
-      state: present
+        name: nginx
+        state: present
     - name: copy expence files
       ansible.builtin.copy:
         src: expence.conf
@@ -18,11 +18,11 @@
         path: /usr/share/nginx/html
         state: directory
 
-     - name: download
+     - name: download and extract
        ansible.builtin.unarchive:
-        src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
-        dest: /usr/share/nginx/html
-        remore_src: yes
+         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
+         dest: /usr/share/nginx/html
+         remore_src: yes
     - name: start nginx service
       ansible.builtin.systemd:
         name: nginx

@@ -12,7 +12,7 @@
         state: present
     - name: copy backend service file
       ansible.builtin.copy:
-        src: backen.service
+        src: backend.service
         dest: /etc/systemd/system/backend.service
     - name: aad application user
       ansible.builtin.user:

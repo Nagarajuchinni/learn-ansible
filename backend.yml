@@ -40,8 +40,6 @@
         state: present
     - name: load chema
       ansible.builtin.shell: mysql - h mysql-dev.172.31.31.164 -uroot -p${{MYSQL_ROOT_PASSWORD}} < /app/chema/backend.sql
-        name: backend
-        state: restatrted
     - name: start backend
       ansible.builtin.systemd:
         name: backend

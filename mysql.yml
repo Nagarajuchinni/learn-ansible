@@ -8,12 +8,12 @@
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
-    - name: start mysql service
+    - name: install mysql service
       ansible.builtin.dnf:
-        name: mysql-comminity-server
+        name: mysql-community-server
         state: present
     - name: start mysql service
-      ansible.builting.systemd:
+      ansible.builtin.systemd:
         name: mysqld
         state: restarted
         enabled: yes

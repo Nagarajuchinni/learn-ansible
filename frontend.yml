@@ -10,6 +10,7 @@
       ansible.builtin.copy:
         src: expense.conf
         dest: /etc/nginx/default.d/expense.conf
+        remore_src: yes
     - name: clean old nginx dir
       ansible.builtin.file:
         path: /usr/share/nginx/html

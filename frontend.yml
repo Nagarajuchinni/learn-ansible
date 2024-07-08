@@ -20,7 +20,7 @@
         state: directory
     - name: download and extract
       ansible.builtin.unarchive:
-         remore_src: yes
+         remote_src: yes
          src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
          dest: /usr/share/nginx/html
     - name: start nginx service

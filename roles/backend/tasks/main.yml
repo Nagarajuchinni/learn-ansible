@@ -1,8 +1,4 @@
-- name: setup mysql for expence
-  hosts: all
-  become: yes
-  tasks:
-    - name: disable nodejs default version
+- name: disable nodejs default version
       ansible.builtin.shell: dnf module disable nodejs -y
     - name: enable nodejs 18 version
       ansible.builtin.shell: dnf module enable nodejs:18 -y

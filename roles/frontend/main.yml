@@ -1,8 +1,4 @@
-- name: setup frontend for expence
-  hosts: all
-  become: yes
-  tasks:
-    - name: installing nginx
+- name: installing nginx
       ansible.builtin.dnf:
         name: nginx
         state: present
@@ -28,6 +24,3 @@
         name: nginx
         state: restarted
         enabled: yes
-      
-
-      

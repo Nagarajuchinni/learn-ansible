@@ -1,8 +1,4 @@
-- name: setup mysql for expence
-  hosts: all
-  become: yes
-  tasks:
-    - name: Disable mysql default version
+- name: Disable mysql default version
       ansible.builtin.shell: dnf module disable mysql -y
     - name: copy mysql repo files
       ansible.builtin.copy:

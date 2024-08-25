@@ -2,7 +2,7 @@
   hosts: all
   tasks:
     - name: installing nginx
-    ansible.builtin.dnf:
+      ansible.builtin.dnf:
       name: nginx
       state: present
     - name: copy expence files

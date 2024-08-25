@@ -1,16 +1,14 @@
 - name: setup frontend for expence
   hosts: all
-  become: yes
   tasks:
     - name: installing nginx
-      ansible.builtin.dnf:
-        name: nginx
-        state: present
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
     - name: copy expence files
       ansible.builtin.copy:
-        src: expense.conf
-        dest: /etc/nginx/default.d/expense.conf
-        remore_src: yes
+        src: expence.conf
+        dest: /etc/nginx/default.d/expence.conf
     - name: clean old nginx dir
       ansible.builtin.file:
         path: /usr/share/nginx/html
@@ -19,11 +17,11 @@
       ansible.builtin.file:
         path: /usr/share/nginx/html
         state: directory
-    - name: download and extract
+     - name: download and extract expence files
       ansible.builtin.unarchive:
-         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
-         dest: /usr/share/nginx/html
-         remore_src: yes
+        src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
+        dest: /usr/share/nginx/html
+        remore_src: yes
     - name: start nginx service
       ansible.builtin.systemd:
         name: nginx
